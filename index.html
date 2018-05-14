@@ -1,0 +1,228 @@
+<html>
+  <head>
+          <link rel="stylesheet" href="css/style.css">
+    <style>
+       #map {
+        height: 100%;
+        width: 100%;
+        z-index:0;
+       }
+
+#img1 {
+position: absolute;
+
+    left: 160px;
+    top: 160px;
+    z-index: 5;
+}
+
+#idbutonmap {
+position: absolute;
+
+    left: 22px;
+    top: 160px;
+    z-index: 5;
+}
+#idbuton3 {
+position: absolute;
+
+    left: 222px;
+    top: 160px;
+    z-index: 5;
+}
+
+#demo {
+position: absolute;
+
+    left: 222px;
+    top: 160px;
+    z-index: 5;
+}
+    </style>  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  </head>
+  <body>
+  
+    <div id="map"></div>
+    <button id="img1"  onclick="myFunction()">Click me</button>
+    <button class ="clbt"  id ="idbutonmap" onclick="udatemap()">map</button>
+    <button id ="idbuton3" onclick="androiniciawaze()">android3</button>
+    <p id="demo" >Click me to change my HTML content (innerHTML).</p>
+
+
+
+
+<div id="accesspanel">
+  <h1 id="litheader">AECEND</h1>
+  <div class="inset">
+    <p>
+      <input id="idcedula" type="text" name="username"  placeholder="cedula">
+    </p>
+    <p>
+      <input id="idcelular" type="text" name="password"  placeholder="celular">
+    </p>
+    <div style="text-align: center;">
+      <div class="checkboxouter">
+        <input type="checkbox" name="rememberme" id="remember" value="Remember">
+        <label class="checkbox"></label>
+      </div>
+      <label id ="idlabel" for="remember">Remember me for 14 days</label>
+      <label id ="idlabel2" for="remember">Remember me for 14 days</label>
+    </div>
+    <input class="loginLoginValue" type="hidden" name="service" value="login" />
+  </div>
+  <p class="p-container">
+    <button id="idbt" onclick="btaccion()">Click me</button><br>
+   
+</div>
+
+
+
+
+
+
+
+
+   
+    <script>
+
+
+
+
+
+
+
+
+document.getElementById("map").style.display = "none";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ var w = window.innerWidth;
+var h = window.innerHeight; 
+var vwaze="";
+var vnodelat="";
+var vnodelng="";
+var vnodelnguser="";
+var vnodelatuser="";
+
+
+
+var vreturn="";
+var vid="";
+var vndpadre="";
+var vndhijo="";
+
+var vgetrelojscript="";
+
+
+
+var latm;
+var lngm;
+var latus;
+var lngus;
+var vstxnode="";
+
+function StF(ss){
+ return parseFloat(ss);
+}
+function pp(){
+//player  4.628456, -74.137556
+// user 4.631045, -74.135337
+latm=StF("4.628456");
+ lngm=StF("-74.137556");
+latus=StF("4.631045");
+ lngus=StF("-74.135337");
+ alert(latm*latus);
+}
+pp();
+ //texto(this.getPosition()+" "+this.title+" a "+this.activom);
+
+vnodelat=4.6789;
+vndhijo="uno";
+vnodelng=-74.135337;
+vndpadre="taxis";
+
+  function showAndroidToast(st1,st2,st3,st4) {
+
+    vid=st1;
+    vndpadre=st2;
+    vndhijo=st3;
+      // vreturn=  window.Android.showToast(vid,vndpadre,vndhijo);
+ //document.getElementById("demo").innerHTML = vreturn;
+ if(vid=="coorde"&& true){
+  alert("con window");
+  vstxnodes=window.Android.showToast("txtnodes",vndpadre,vndhijo);
+vnodelat=window.Android.showToast("latm",vndpadre,vndhijo);
+vnodelng=window.Android.showToast("lngm",vndpadre,vndhijo);
+vnodelnguser=window.Android.showToast("lngus",vndpadre,vndhijo);
+vnodelatuser=window.Android.showToast("latus",vndpadre,vndhijo);
+vndpadre=window.Android.showToast("nodep",vndpadre,vndhijo);
+vndhijo=window.Android.showToast("nodeh",vndpadre,vndhijo);
+vwaze=window.Android.showToast("waze",vndpadre,vndhijo);
+vstxnode=window.Android.showToast("btaccionuser",vndpadre,vndhijo);
+
+  vid=st1;
+    vndpadre=st2;
+    vndhijo=st3;
+     // vreturn=st2;
+    //alert("padre "+st2);
+if(vid=="1"){vreturn=  window.Android.showToast(vid,vndpadre,vndhijo);}
+  if(vid=="btaccionuser"){vreturn=  window.Android.showToast("btaccionuser",vndpadre,vndhijo);document.getElementById("idlabel").innerHTML = vreturn;
+vndhijo=vreturn;}
+
+if(st1=="3"){ document.getElementById("idlabel").innerHTML = vreturn;}if(st1=="4"){
+ document.getElementById("idlabel2").innerHTML = vreturn;}
+
+//document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""vnodelat+""vnodelng;
+
+}
+if(vid=="gpsllamar"){
+window.Android.showToast("gpsllamar",vndpadre,vndhijo);}
+if(vid=="wazeinciia"){
+
+window.Android.showToast("wazeinciia",vndpadre,vndhijo);}
+if(vid=="getrelojscript"){
+vgetrelojscript=window.Android.showToast("getrelojscript",vndpadre,vndhijo);
+}
+if(vid=="getrelojscript"){
+vstxnode=window.Android.showToast("btaccionuser",vndpadre,vndhijo);
+vndhijo=vstxnode;
+}
+
+
+
+
+  
+    }
+//document.getElementById("demo").innerHTML = "okkkkkkkkkkk";
+showAndroidToast("coorde","","","");
+if(vstxnode==""){
+ vstxnode=showAndroidToast("btaccionuser","","","");
+  
+}
+//showAndroidToast("wazeinciia","","","");
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV4ya46Yoag-iGeJb5SUwZ2q1Irx0UjnU&callback=initMap">
+
+       </script>  <script  src="login.js"></script>
+    </script>
+  </body>
+</html>
