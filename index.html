@@ -108,7 +108,7 @@ document.getElementById("map").style.display = "none";
 
 
 
-
+alert("ddddddddd");
 
 
 
@@ -178,11 +178,14 @@ vndhijo=window.Android.showToast("nodeh",vndpadre,vndhijo);
 vwaze=window.Android.showToast("waze",vndpadre,vndhijo);
 vstxnode=window.Android.showToast("btaccionuser",vndpadre,vndhijo);
 
-  vid=st1;
-    vndpadre=st2;
-    vndhijo=st3;
+}
+
+    vndpadre="taxis";
+    vndhijo="uno";
+
      // vreturn=st2;
     //alert("padre "+st2);
+    
 if(vid=="1"){vreturn=  window.Android.showToast(vid,vndpadre,vndhijo);}
   if(vid=="btaccionuser"){vreturn=  window.Android.showToast("btaccionuser",vndpadre,vndhijo);document.getElementById("idlabel").innerHTML = vreturn;
 vndhijo=vreturn;}
@@ -193,6 +196,12 @@ if(st1=="3"){ document.getElementById("idlabel").innerHTML = vreturn;}if(st1=="4
 //document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""vnodelat+""vnodelng;
 
 }
+
+
+
+
+
+
 if(vid=="gpsllamar"){
 window.Android.showToast("gpsllamar",vndpadre,vndhijo);}
 if(vid=="wazeinciia"){
@@ -217,12 +226,24 @@ if(vstxnode==""){
  vstxnode=showAndroidToast("btaccionuser","","","");
   
 }
+
+
+
+
+ 
+
+   
+
+//src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV4ya46Yoag-iGeJb5SUwZ2q1Irx0UjnU&callback=initMap"
+
+
+
+
 //showAndroidToast("wazeinciia","","","");
     </script>
-    <script async defer
+   <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV4ya46Yoag-iGeJb5SUwZ2q1Irx0UjnU&callback=initMap">
-
        </script>  <script  src="login.js"></script>
-    </script>
+  
   </body>
 </html>
