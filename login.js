@@ -893,14 +893,14 @@ setTimeout(cuenta_atras, 3000);
 function cuenta_atras(bo){
 
 
-  showAndroidToast("gpsllamar","","","");
+ /* showAndroidToast("gpsllamar","","","");
   var boli=bo;
   if(String(bo)=="undefined"){
 boli=true;}
 
 udatemap();
  setttimeout(boli);
-
+*/
 
 
 //window.location="https://noenadies.github.io/taxistasservicio/";
