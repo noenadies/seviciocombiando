@@ -148,10 +148,20 @@ function nodesuperpadre(nd)
 
 var noregistro=true;
 function validadcionuser(cel,ced){
+  
+
+
+ 
+
+
+
+
 for(var val in general){
 
    if(general[val].cel==cel&&general[val].cedula==ced){
- //alert("encontrado login ");
+ 
+
+ alert("encontrado login ");
  
  vnodeh=val;
 showAndroidToast("1","taxis",vnodeh,"");
@@ -342,7 +352,7 @@ console.log("s "+ arrnode2[i]);
 function  arrayidall(){
 var i;
 for (i = 0; i < arrnode2.length; i++) { 
-console.log( "arrnode2 " + arrnode2[i].idfirebase);
+//console.log( "arrnode2 " + arrnode2[i].idfirebase);
 
 
 }
@@ -358,7 +368,7 @@ return general[nodh][nodh2];
 }
 
 
-var noregistro=true;
+var noregistro=true;/*
 function validadcionuser(cel,ced){
 for(var val in general){
     console.log("cel "+general[val].cedula);
@@ -370,7 +380,7 @@ for(var val in general){
 if(noregistro){
 alert("no encontrado login ");
 }
-}
+}*/
 var idx=0;
 
 
