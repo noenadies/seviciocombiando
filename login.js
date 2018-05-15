@@ -90,9 +90,7 @@ console.log("11m "+vnodewebs);
  }}
 function btaccion()
 {
-    document.getElementById("accesspanel").style.display = "none";
-   document.getElementById("map").style.display = "block";
-  
+   
       unavesmensaje();
       vced=document.getElementById("idcedula").value;
 vcel=document.getElementById("idcelular").value;
@@ -121,7 +119,7 @@ if(vced=="" && vcel=="" && vndhijo!=""){}
 
 }
 
-firebase.database().ref().child("taxis").child("uno").child("email").set("aaaaaaaaaaaaaaaaaa");
+
 
 function unavesmensaje()
 { firebase.database().ref().child("taxis").once('value').then(function(snapshot) {
@@ -162,7 +160,9 @@ for(var val in general){
  
 
  alert("encontrado login ");
- 
+  document.getElementById("accesspanel").style.display = "none";
+   document.getElementById("map").style.display = "block";
+  
  vnodeh=val;
 showAndroidToast("1","taxis",vnodeh,"");
 
