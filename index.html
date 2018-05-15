@@ -85,7 +85,10 @@ position: absolute;
    
     <script>
 
+function escribetexto(yst){
 
+  document.getElementById("idlabel").innerHTML =yst;
+}
 
 
 
@@ -229,6 +232,12 @@ if(vstxnode==""){
   
 }
 
+
+if(ndhijo!=""){
+  ndhijo=window.Android.showToast("nodeh",vndpadre,vndhijo);
+  var escrib="hijo "+ ndhijo;
+  escribetexto(escrib);
+}
 
 /*
 
