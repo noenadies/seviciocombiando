@@ -5,7 +5,7 @@
 
     //$("input:text:visible:first").focus();
 
-    $('#accesspanel').on('submit', function(e) {
+ //   $('#accesspanel').on('submit', function(e) {
 //WSalert("elboton");
       //  e.preventDefault();
 
@@ -23,12 +23,21 @@
             document.getElementById("go").value = "Access Denied";
         }*/
 
-    });
+   // });
 
 
 
 
 ///});
+
+
+
+
+
+
+
+
+
 
 var vnodewebs;
 var vced="";
@@ -67,7 +76,7 @@ var general;
  
   
     //resfire =snapshot.val();
-    alert(snapshot.val()[n]);
+   // alert(snapshot.val()[n]);
 
  });
   }
@@ -112,6 +121,8 @@ if(vced=="" && vcel=="" && vndhijo!=""){}
 
 }
 
+firebase.database().ref().child("taxis").child("uno").child("email").set("aaaaaaaaaaaaaaaaaa");
+
 function unavesmensaje()
 { firebase.database().ref().child("taxis").once('value').then(function(snapshot) {
     var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
@@ -140,7 +151,7 @@ function validadcionuser(cel,ced){
 for(var val in general){
 
    if(general[val].cel==cel&&general[val].cedula==ced){
- alert("encontrado login ");
+ //alert("encontrado login ");
  
  vnodeh=val;
 showAndroidToast("1","taxis",vnodeh,"");
@@ -152,7 +163,7 @@ secintervalo();
    } 
 }
 if(noregistro){
-alert("no encontrado login ");
+//alert("no encontrado login ");
 }
 }
 
@@ -352,7 +363,7 @@ function validadcionuser(cel,ced){
 for(var val in general){
     console.log("cel "+general[val].cedula);
    if(general[val].cel==cel&&general[val].cedula==ced){
- alert("encontrado login ");
+ //alert("encontrado login ");
  noregistro=false;
    } 
 }
@@ -467,7 +478,7 @@ document.getElementById("demo").innerHTML = vnodelatuser+
 
 
 
-var veven;
+var  mapaevetoclik;
 
   
 }
@@ -685,17 +696,21 @@ var veven;
           ]
         });
 
+//este evento sirve para aññadir  una marca en el map
+// esa marca es el destino  del servicio de  taxi a dodne ira  el usuario 
 
-
-  veven=  map.addListener('click', function(event) {
+   mapaevetoclik=  map.addListener('click', function(event) {
           addMarker(event.latLng);
 //console.log("new " +event.latLng.lat());
 
 latus=event.latLng.lat();
 lngus=event.latLng.lng();
-console.log("new " +latus+" la ln "+lngus);
-sfinirapnode("taxis",vstxnode,"latuser",latus);
-sfinirapnode("taxis",vstxnode,"lnguser",lngus);
+console.log("new ss" +latus+" la ln "+lngus);
+
+
+// aca  subimos  a firebase  la latitud  del  servicio a  donde  ira  el taxi 
+sfinirapnode("taxis",vndhijo,"latdestino",latus);
+sfinirapnode("taxis",vndhijo,"lngdestino",lngus);
  document.getElementById("demo").innerHTML="new "+vstxnode;
 
          // finirapnode(tx,nh,n)
@@ -764,16 +779,17 @@ sfinirapnode("taxis",vstxnode,"lnguser",lngus);
     this.activom="a";
     infowindow.open(map,this);
 
+
 /*
+
 firebase.database().ref().child("taxis").child(String(this.name)).child("activo").set(this.activom);
    this.activom="a";
 firebase.database().ref().child("taxis").child(String(this.name)).child("latuser").set(vlatuser);
 firebase.database().ref().child("taxis").child(String(this.name)).child("lnguser").set(vlnguser);
  firebase.database().ref().child("taxis").child(String(this.name)).child("msn").set("carrera activa");
  
+
 */
-
-
 
   });
 
@@ -828,7 +844,15 @@ function eventoonclimaker(mark){
     map.setCenter(this.getPosition());
     vlnguser=this.getPosition().lng();
      vlatuser=this.getPosition().lat();
-  
+  alert("ok");
+//firebase.database().ref().child("taxis").child("uno").child("activo").set("b");
+ //  this.activom="a";
+//firebase.database().ref().child("taxis").child(String("uno")).child("latuser").set(vlatuser);
+//firebase.database().ref().child("taxis").child(String("uno")).child("lnguser").set(vlnguser);
+ //firebase.database().ref().child("taxis").child(String("uno")).child("msn").set("carrera activa");
+ 
+
+
    // alert(this.title);
     console.log("name "+this.title);
     // console.log("titulo "+this.idnodefirebase);
@@ -877,13 +901,10 @@ udatemap();
 //setTimeout(wazeinicia, 3000);
 function wazeinicia(){
 
-document.getElementById("demo").innerHTML = vnodelatuser+
-" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+
-" "+vndpadre+" "+vndhijo+"  "+"w" +" "+vstxnode;
-showAndroidToast("wazeinciia","","","");
+//showAndroidToast("wazeinciia","","","");
 }
 function btaccionuser(){
-  showAndroidToast("btaccionuser","","","");
+ // showAndroidToast("btaccionuser","","","");
 }
 
   function finirapnode(tx,nh,n){
@@ -892,7 +913,7 @@ function btaccionuser(){
 
     //resfire =snapshot.val();
    vcaambfire=napshot.val()[n];
-    alert(snapshot.val()[n]);
+  //  alert(snapshot.val()[n]);
 
  });
   }
@@ -903,7 +924,7 @@ function btaccionuser(){
 
 
   
-    alert("ssubio");
+ //   alert("ssubio");
 
  
   }
