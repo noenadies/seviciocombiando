@@ -122,6 +122,8 @@ var h = window.innerHeight;
 var vwaze="";
 var vnodelat="";
 var vnodelng="";
+var vnlatdirecion="";
+var vnlngdirecion="";
 var vnodelnguser="";
 var vnodelatuser="";
 
@@ -166,7 +168,7 @@ vndpadre="taxis";
 
       // vreturn=  window.Android.showToast(vid,vndpadre,vndhijo);
  //document.getElementById("demo").innerHTML = vreturn;
- if(vid=="coorde"&& true){
+ if(st1=="coorde"&& true){
   alert("con window");
  /* vstxnodes=window.Android.showToast("txtnodes",vndpadre,vndhijo);
 vnodelat=window.Android.showToast("latm",vndpadre,vndhijo);
@@ -248,6 +250,10 @@ vndhijo=window.Android.showToast("nodeh",vndpadre,vndhijo);
 
 vnodelat=window.Android.showToast("latm",vndpadre,vndhijo);
 vnodelng=window.Android.showToast("lngm",vndpadre,vndhijo);
+
+
+vnlatdirecion=window.Android.showToast("latdirecion",vndpadre,vndhijo);
+vnlngdirecion=window.Android.showToast("lngdirecion",vndpadre,vndhijo);
 //if(ndhijo!=""){
   //ndhijo=window.Android.showToast("nodeh",vndpadre,vndhijo);
   var escrib="hijo "+ vndhijo+ " lat "+vnodelat+" lng " +vnodelng;
