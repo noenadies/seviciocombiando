@@ -112,14 +112,21 @@ vcel=document.getElementById("idcelular").value;
 
 
 
-if(vced=="" && vcel=="" && vndhijo!=""){}
+if(vced=="" && vcel=="" && vndhijo!=""){
+    divmostrar();
+}
   //  setTimeout(cuenta_atras, 3000);
 
 
 
 }
 
+function divmostrar(){
+      document.getElementById("accesspanel").style.display = "none";
+   document.getElementById("map").style.display = "block";
 
+ 
+}
 
 function unavesmensaje()
 { firebase.database().ref().child("taxis").once('value').then(function(snapshot) {
