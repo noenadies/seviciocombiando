@@ -158,7 +158,7 @@ pp();
  //texto(this.getPosition()+" "+this.title+" a "+this.activom);
 
 vnodelat=4.6789;
-vndhijo="uno";
+//vndhijo="uno";
 vnodelng=-74.135337;
 vndpadre="taxis";
 
@@ -232,10 +232,13 @@ if(vstxnode==""){
   
 }
 
-ndhijo=window.Android.showToast("nodeh",vndpadre,vndhijo);
+vndhijo=window.Android.showToast("nodeh",vndpadre,vndhijo);
+
+vnodelat=window.Android.showToast("latm",vndpadre,vndhijo);
+vnodelng=window.Android.showToast("lngm",vndpadre,vndhijo);
 if(ndhijo!=""){
  // ndhijo=window.Android.showToast("nodeh",vndpadre,vndhijo);
-  var escrib="hijo "+ ndhijo;
+  var escrib="hijo "+ vndhijo;
   escribetexto(escrib);
 }
 
