@@ -503,7 +503,7 @@ var  mapaevetoclik;
     function initMap1(a,b) {
         var uluru = {lat:a, lng:b};
        map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 17,
+          zoom: 6,
           center: uluru,
          mapTypeId: google.maps.MapTypeId.ROADMAP  ,
           styles:[
@@ -765,7 +765,7 @@ sfinirapnode("taxis",vndhijo,"lngdestino",lngus);
   var image="https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/32/Map-Marker-Marker-Inside-Chartreuse.png";
   
            var marker = new google.maps.Marker({
-           position:{lat:latm, lng: lngm},
+           position:{lat:a, lng: b},
            //  icon: icons[feature.type].icon,
             map: map,
             title:"uno",
@@ -861,7 +861,7 @@ function eventoonclimaker(mark){
     map.setCenter(this.getPosition());
     vlnguser=this.getPosition().lng();
      vlatuser=this.getPosition().lat();
-  alert("ok");
+
 //firebase.database().ref().child("taxis").child("uno").child("activo").set("b");
  //  this.activom="a";
 //firebase.database().ref().child("taxis").child(String("uno")).child("latuser").set(vlatuser);
