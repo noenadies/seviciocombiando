@@ -469,8 +469,7 @@ latm=vnodelat;
 lngm=vnodelng;
 
 //vnodelat=4.630381;
-//vnodelng=-74.137992;
-alert("vnodelat "+vnodelat);
+
 function udatemap(){
 
 latm=parseFloat(vnodelat); 
@@ -763,9 +762,9 @@ sfinirapnode("taxis",vndhijo,"lngdestino",lngus);
 
 
   var image="https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/32/Map-Marker-Marker-Inside-Chartreuse.png";
-  
+  //4.6284038,-74.1458368,
            var marker = new google.maps.Marker({
-           position:{lat:a, lng: b},
+           position:{lat:4.6284038, lng:-74.1458368},
            //  icon: icons[feature.type].icon,
             map: map,
             title:"uno",
