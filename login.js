@@ -764,7 +764,7 @@ sfinirapnode("taxis",vndhijo,"lngdestino",lngus);
   var image="https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/32/Map-Marker-Marker-Inside-Chartreuse.png";
   //4.6284038,-74.1458368, Bogotá 4.628440, -74.137178
            var marker = new google.maps.Marker({
-           position:{lat:a, lng:b},
+           position:{lat:vnodelat, lng:vnodelng},
            //  icon: icons[feature.type].icon,
             map: map,
             title:"uno",
