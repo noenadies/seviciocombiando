@@ -122,8 +122,13 @@ if(vced=="" && vcel=="" && vndhijo!=""){
 }
 
 function divmostrar(){
-      document.getElementById("accesspanel").style.display = "none";
+
+     document.getElementById("accesspanel").style.display = "none";
    document.getElementById("map").style.display = "block";
+
+   document.getElementById("idbuton3").style.display  = "block";
+document.getElementById("img1").style.display  = "block";
+document.getElementById("idbutonmap").style.display = "block";
 
  
 }
