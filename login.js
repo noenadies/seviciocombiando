@@ -274,7 +274,7 @@ var vcaambfire="";
 
 var general;
 
-vnodelat=4.6789;
+
 
 
 unavesmensaje();
@@ -502,7 +502,7 @@ var  mapaevetoclik;
     function initMap1(a,b) {
         var uluru = {lat:a, lng:b};
        map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 6,
+          zoom: 9,
           center: uluru,
          mapTypeId: google.maps.MapTypeId.ROADMAP  ,
           styles:[
@@ -764,7 +764,7 @@ sfinirapnode("taxis",vndhijo,"lngdestino",lngus);
   var image="https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/32/Map-Marker-Marker-Inside-Chartreuse.png";
   //4.6284038,-74.1458368, Bogotá 4.628440, -74.137178
            var marker = new google.maps.Marker({
-           position:{lat:4.628440, lng:-74.137178},
+           position:{lat:vnodelat, lng:vnodelng},
            //  icon: icons[feature.type].icon,
             map: map,
             title:"uno",
@@ -917,7 +917,7 @@ udatemap();
 //setTimeout(wazeinicia, 3000);
 function wazeinicia(){
 
-//showAndroidToast("wazeinciia","","","");
+showAndroidToast("wazeinciia","","","");
 }
 function btaccionuser(){
  // showAndroidToast("btaccionuser","","","");
