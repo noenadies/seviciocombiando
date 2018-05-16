@@ -169,6 +169,14 @@ for(var val in general){
  alert("encontrado login ");
   document.getElementById("accesspanel").style.display = "none";
    document.getElementById("map").style.display = "block";
+
+   document.getElementById("idbuton3").style.display  = "block";
+document.getElementById("img1").style.display  = "block";
+document.getElementById("idbutonmap").style.display = "block";
+
+
+
+
   
  vnodeh=val;
 showAndroidToast("1","taxis",vnodeh,"");
