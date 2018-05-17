@@ -294,8 +294,8 @@ unavesmensaje();
 
 firebase.database().ref().child("taxis").child(String(vndhijo)).child("usuario").on('value', function(snapshot) {
   //updateStarCount(postElement, snapshot.val());
-document.getElementById("demo").innerHTML = vnodelatuser+" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+" "+vndpadre+" h "+vndhijo+
-  " nn " + vstxnode+" --*** "+snapshot.val();
+document.getElementById("demo").innerHTML ="Mitaxi" ;//vnodelatuser+" lauylnu "+  vnodelnguser+""+vnodelat+" "+vnodelng+" "+vndpadre+" h "+vndhijo+
+ // " nn " + vstxnode+" --*** "+snapshot.val();
   //alert(snapshot.val());
 });
 
@@ -487,10 +487,10 @@ function udatemap(){
 
 latm=parseFloat(vnodelat); 
 lngm=parseFloat(vnodelng);
-document.getElementById("demo").innerHTML = vnodelatuser+
+/*document.getElementById("demo").innerHTML = vnodelatuser+
 " lauylnu ok  "+  vnodelnguser+""+vnodelat+" "+vnodelng+
-" "+vndpadre+" "+vndhijo+"  "+"nodess andr " +" "+vstxnode;
-
+" "+vndpadre+" "+vndhijo+"  "+"nodess andr " +" "+vstxnode;*/
+escribetexto("Taxis Bogota")
 
    initMap1(parseFloat(vnodelat),parseFloat(vnodelng));
    andridmarker(222, map) ;
