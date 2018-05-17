@@ -1029,4 +1029,341 @@ if( document.getElementById("map").style.display == "none"){
 
 
 
+///////////////////////////////////////////////////////
+////////////////////////////////7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var Costoservicio=0;
+
+//https://reviblog.net/2016/01/08/javascript-obtener-la-distancia-distancia-en-kilometros-entre-dos-puntos-dadas-por-su-latitud-y-longitud/
+
+//4.628459, -74.136978
+//4.629157, -74.136908
+ getKilometros = function(lat1,lon1,lat2,lon2)
+ {
+ rad = function(x) {return x*Math.PI/180;}
+var R = 6378.137; //Radio de la tierra en km
+ var dLat = rad( lat2 - lat1 );
+ var dLong = rad( lon2 - lon1 );
+var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLong/2) * Math.sin(dLong/2);
+ var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+ var d = R * c;
+return d.toFixed(3); //Retorna tres decimales
+ }
+alert(getKilometros(4.628459,-74.136978,4.629157,-74.136908));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ function calcosteservice(stds,sttimet){
+
+
+
+var aRn=0;
+var aRp=0;
+var aRa=0;
+
+
+
+var Ds=0;
+var timtotal=1;
+var R=0;
+var B=0;
+var C=0;
+var FCal=0;
+var vs=0;
+var vfl=36;
+var vc=18;
+var b1=0.83;
+var b2=2.48;
+var c=-0.825;
+var FCong=0;
+var KrecoridosDia=0;
+var ncarrerasdia=0;
+var M=0;
+var boolFcal=true;
+var Ra=0;
+var Rn=0;
+var Rp=0;
+
+
+
+var boolFcal=true;
+if(boolFcal){
+  Fcal=0.133;
+    C=998;
+    B=2800/2.8;
+
+    Ra=5000/5;
+    Rn=2400/2.4;
+    Rp=900/0.9;
+    M=5000/5;
+
+}else{
+
+Fcal=0;
+C=881;
+B=2500/2.8;
+Ra=4400/5;
+Rn=2100/2.4;
+M=4400/5;
+Rp=800/0.9;
+}
+        
+Ds=document.getElementById("idds").value;
+timtotal=document.getElementById("idtime").value;
+console.log("Costoservicio"+Ds+ " " +timtotal);
+aRn=1;
+
+R=(Rn*aRn+Rp*aRp+Ra*aRa)*Ds;
+
+
+vs=Ds/timtotal;
+console.log("vs "+ vs);
+
+if(vs>=vfl){
+
+FCong=0;
+console.log(" FCong 1  "+FCong);
+}
+
+if(vs<vfl&&vs>=vc){
+
+FCong=((vfl-vs)/vfl)*b1;
+console.log(" FCong 2 "+FCong+" vs "+ vs+""+vfl+""+b1);
+}
+
+if(vs<vc){
+
+FCong=(((vfl-vs)/vfl)*b1)+c;
+console.log( " FCong 3 "+FCong+ " vs "+ vs+" vc "+vc+"v"+b1+" c "+c);
+}
+//R=0;
+//Fcal=0.133;
+//FCong=1;
+console.log("Costoservicio"+ Costoservicio+" fcong "+FCong+" r "+R+" fcal "+Fcal+" c "+C+"  b "+B);
+
+Costoservicio=B*Ds+((C*(1+FCal))*(1 + FCong)*Ds)+R;
+
+
+  document.getElementById("idlabecosto").innerHTML ="El pasajero paga "+Costoservicio;
+alert(Costoservicio);
+console.log("Costoservicio"+ Costoservicio);
+ }
+
+
+function mostrarcoste(){
+    document.getElementById("costo").style.display = "block";
+}
+
+
+
+
+
+
+function btboollamagpspara(){
+
+    boollamagps=false;
+}
+
+function btboollamagpsinici(){
+
+    boollamagps=true;
+}
+
+
+function ciclogps(){
+
+     setInterval(function(){ if(boollamagps){
+
+        ciclogps2();
+     }}, 60000);
+}
+
+function ciclogps2(){
+
+     setInterval(function(){ if(boollamagps){
+
+        ciclogps1();
+     }}, 60000);
+}
+
+
+
+if(boolFcal){
+    FCal=0.133;
+    C=998;
+    B=2800/2.8;
+
+    Ra=5000/5;
+    Rn=2400/2.4;
+    Rp=900/0.9;
+    M=5000/5;
+
+}else{
+
+FCal=0;
+C=881;
+B=2500/2.8;
+Ra=4400/5;
+Rn=2100/2.4;
+M=4400/5;
+Rp=800/0.9;
+}
+
+Ds=Ds;//getgps
+
+R=(Rn*aRn+Rp*aRp+Ra*aRa)*Ds;
+
+
+vs=Ds/timtotal;
+if(vs>=vfl){
+
+FCong=0;
+
+}
+
+if(vs<vfl&&vs>=vc){
+
+FCong=((vfl-vs)/vfl)*b1;
+
+}
+
+if(vs<vc){
+
+FCong=((vfl-vs)/vfl)*b1+c;
+
+}
+
+
+Costoservicio=B*Ds+((C*(1+Fcal))*(1 + FCong)*Ds)+R;
+
+
+//B=2.8*(C*(1+FCal))
+/*
+𝐶 = 𝐶𝑜𝑠𝑡𝑜 𝑝𝑜𝑟 𝑘𝑖𝑙ó𝑚𝑒𝑡𝑟𝑜
+𝐹𝐶𝑎𝑙 = 𝐹𝑎𝑐𝑡𝑜𝑟 𝑑𝑒 𝑐𝑎𝑙𝑖𝑑𝑎𝑑
+𝐹𝐶𝑜𝑛𝑔 = 𝐹𝑎𝑐𝑡𝑜𝑟 𝑑𝑒 𝑐𝑜𝑛𝑔𝑒𝑠𝑡𝑖ó𝑛
+𝐷𝑠 = 𝐷𝑖𝑠𝑡𝑎𝑛𝑐𝑖𝑎 𝑐𝑎𝑙𝑐𝑢𝑙𝑎𝑑𝑎 𝑑𝑒 𝑟𝑒𝑐𝑜𝑟𝑟𝑖𝑑𝑜,𝑒𝑛 𝑘𝑖𝑙ó𝑚𝑒𝑡�
+𝑅 = 𝑉𝑎𝑙𝑜𝑟 𝑑𝑒 𝑙𝑜𝑠 𝑟𝑒𝑐𝑎𝑟𝑔𝑜�
+*/
+
+//𝐶𝑜𝑠𝑡𝑜 𝑑𝑒𝑙 𝑠𝑒𝑟𝑣𝑖𝑐𝑖𝑜 = 𝐵 + ((𝐶 ∗ (1 + 𝐹𝐶𝑎𝑙)) ∗ (1 + 𝐹𝐶𝑜𝑛𝑔) ∗ 𝐷𝑠) + �
+
+//Costoservicio=B+((C*(1+𝐹𝐶𝑎𝑙))*(1 + 𝐹𝐶𝑜𝑛𝑔)*Ds)+R;
+
+
+//𝐶 =(𝐶𝐹𝑖 + 𝐶𝑉𝑖 + 𝐶𝐶𝑖/)/𝐾𝑚𝑒𝑠
+/*
+Dónde:
+𝐶 = 𝐶𝑜𝑠𝑡𝑜 𝑝𝑜𝑟 𝑘𝑖𝑙ó𝑚𝑒𝑡𝑟𝑜
+𝐶𝑉𝑖 = 𝐶𝑜𝑠𝑡𝑜𝑠 𝑣𝑎𝑟𝑖𝑎𝑏𝑙𝑒𝑠 𝑚𝑒𝑛𝑠𝑢𝑎𝑙𝑒𝑠
+𝐶𝐹𝑖 = 𝐶𝑜𝑠𝑡𝑜𝑠 𝑓𝑖𝑗𝑜𝑠 𝑚𝑒𝑛𝑠𝑢𝑎𝑙𝑒𝑠
+𝐶𝐶𝑖 = 𝐶𝑜𝑠𝑡𝑜𝑠 𝑑𝑒 𝑐𝑎𝑝𝑖𝑡𝑎𝑙 𝑚𝑒𝑛𝑠𝑢𝑎𝑙𝑒𝑠
+𝐾𝑚𝑒𝑠 = 𝐾𝑖𝑙ó𝑚𝑒𝑡𝑟𝑜𝑠 𝑟𝑒𝑐𝑜𝑟𝑟𝑖𝑑𝑜𝑠 𝑎𝑙 𝑚𝑒�
+
+*/
+
+
+var  CFi=0;
+var  CVi =0;
+var CCi=0;
+var Kmes=0;
+//C =(CFi + CVi + CCi)/Kmes
+
+
+//𝐵 = 2.8 ∗ (𝐶 ∗ (1 + 𝐹𝐶𝑎𝑙))
+//B=2.8*(C(1+FCal))
+
+//𝐵 = 𝐶 ∗ (1 + 𝐹𝑐𝑎𝑙) ∗
+//B= C* (1 + FCal) ∗(KrecoridosDia/ncarrerasdia)
+
+
+// 𝑀 = 5 ∗ (𝐶 ∗ (1 + 𝐹𝐶𝑎𝑙)) carrera minima
+//M= 5*(C*(1 + FCal));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
